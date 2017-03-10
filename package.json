@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "api": "node api.js",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "dev": "webpack-dev-server --port 3000"
+  },
   "dependencies": {
     "ace-css": "1.1",
     "css-loader": "^0.27.1",

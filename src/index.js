@@ -1,9 +1,9 @@
 'use strict';
 
 require('ace-css/css/ace.css');
-require('font-awesome/css/fond-awesome.css');
+require('font-awesome/css/font-awesome.css');
 
-// Require inext.html so it gets copied to dist
+// Require index.html so it gets copied to dist
 require('./index.html');
 
 var Elm = require('./Main.elm');
