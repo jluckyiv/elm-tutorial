@@ -1,6 +1,12 @@
 module Models exposing (..)
 
 
+type Route
+    = PlayersRoute
+    | PlayerRoute PlayerId
+    | NotFoundRoute
+
+
 type alias Model =
     { players : List Player
     }
