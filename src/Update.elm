@@ -3,13 +3,16 @@ module Update exposing (..)
 import Commands exposing (savePlayerCmd)
 import Msgs exposing (Msg)
 import Models exposing (Model, Player)
-import Routing exposing (parseLocation)
+import Routing exposing (parseLocation, changeLocation)
 import RemoteData
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
+        Msgs.ChangeLocation path ->
+            ( model, changeLocation path )
+
         Msgs.ChangeLevel player howMuch ->
             let
                 updatedPlayer =
