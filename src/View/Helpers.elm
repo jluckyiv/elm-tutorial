@@ -1,4 +1,4 @@
-module LinkHelpers exposing (..)
+module View.Helpers exposing (..)
 
 import Html exposing (Attribute)
 import Html.Events exposing (onWithOptions)
