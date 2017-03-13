@@ -3,7 +3,7 @@ module Main exposing (..)
 import Commands exposing (fetchPlayers)
 import Models exposing (Model, initialModel)
 import Msgs exposing (Msg)
-import Navigation exposing (Location)
+import Navigation
 import Routing
 import Update exposing (update)
 import View exposing (view)
@@ -12,7 +12,7 @@ import View exposing (view)
 -- MODEL
 
 
-init : Location -> ( Model, Cmd Msg )
+init : Navigation.Location -> ( Model, Cmd Msg )
 init location =
     let
         currentRoute =
