@@ -4,7 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (class, href)
 import View.Helpers exposing (onLinkClick)
 import Models exposing (Player)
-import Msgs exposing (Msg)
+import Messages exposing (Msg)
 import RemoteData exposing (WebData)
 import Routing exposing (playerPath)
 
@@ -75,6 +75,6 @@ editBtn player =
         a
             [ class "btn regular"
             , href path
-            , onLinkClick (Msgs.ChangeLocation path)
+            , onLinkClick (Messages.ChangeLocation path)
             ]
             [ i [ class "fa fa-pencil mr1" ] [], text "Edit" ]

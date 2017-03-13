@@ -4,7 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (class, value, href)
 import Html.Events exposing (onClick)
 import View.Helpers exposing (onLinkClick)
-import Msgs exposing (Msg)
+import Messages exposing (Msg)
 import Models exposing (Player)
 import Routing exposing (playersPath)
 
@@ -47,7 +47,7 @@ btnLevelDecrease : Player -> Html Msg
 btnLevelDecrease player =
     let
         message =
-            Msgs.ChangeLevel player -1
+            Messages.ChangeLevel player -1
     in
         a [ class "btn ml1h1" ]
             [ i [ class "fa fa-minus-circle", onClick message ] [] ]
@@ -57,7 +57,7 @@ btnLevelIncrease : Player -> Html Msg
 btnLevelIncrease player =
     let
         message =
-            Msgs.ChangeLevel player 1
+            Messages.ChangeLevel player 1
     in
         a [ class "btn ml1h1" ]
             [ i [ class "fa fa-plus-circle", onClick message ] [] ]
@@ -68,6 +68,6 @@ listBtn =
     a
         [ class "btn regular"
         , href playersPath
-        , onLinkClick (Msgs.ChangeLocation playersPath)
+        , onLinkClick (Messages.ChangeLocation playersPath)
         ]
         [ i [ class "fa fa-chevron-left mr1" ] [], text "List" ]

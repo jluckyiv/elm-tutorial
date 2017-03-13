@@ -2,7 +2,7 @@ module View exposing (..)
 
 import Html exposing (Html, div, text)
 import Models exposing (Model, PlayerId)
-import Msgs exposing (Msg)
+import Messages exposing (Msg)
 import Players.Edit
 import Players.List
 import RemoteData

@@ -2,7 +2,7 @@ module Routing exposing (..)
 
 import Navigation exposing (Location)
 import Models exposing (PlayerId, Route(..))
-import Msgs exposing (Msg)
+import Messages exposing (Msg)
 import UrlParser exposing (..)
 
 

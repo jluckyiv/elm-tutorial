@@ -5,7 +5,7 @@ import Json.Decode as Decode
 import Json.Decode.Pipeline exposing (decode, required)
 import Json.Encode as Encode
 import Models exposing (PlayerId, Player)
-import Msgs exposing (Msg)
+import Messages exposing (Msg)
 import RemoteData
 
 
@@ -13,7 +13,7 @@ fetchPlayers : Cmd Msg
 fetchPlayers =
     Http.get fetchPlayersUrl playersDecoder
         |> RemoteData.sendRequest
-        |> Cmd.map Msgs.OnFetchPlayers
+        |> Cmd.map Messages.OnFetchPlayers
 
 
 fetchPlayersUrl : String
@@ -49,7 +49,7 @@ playerEncoder player =
 savePlayer : Player -> Cmd Msg
 savePlayer player =
     savePlayerRequest player
-        |> Http.send Msgs.OnPlayerSave
+        |> Http.send Messages.OnPlayerSave
 
 
 savePlayerRequest : Player -> Http.Request Player

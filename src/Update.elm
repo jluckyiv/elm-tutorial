@@ -1,7 +1,7 @@
 module Update exposing (..)
 
 import Commands
-import Msgs exposing (..)
+import Messages exposing (..)
 import Models exposing (Model, Player)
 import Routing
 import RemoteData

@@ -1,4 +1,4 @@
-module Msgs exposing (..)
+module Messages exposing (..)
 
 import Http
 import Models exposing (Player)

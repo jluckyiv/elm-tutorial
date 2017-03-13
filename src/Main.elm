@@ -2,7 +2,7 @@ module Main exposing (..)
 
 import Commands exposing (fetchPlayers)
 import Models exposing (Model, initialModel)
-import Msgs exposing (Msg)
+import Messages exposing (Msg)
 import Navigation
 import Routing
 import Update exposing (update)
@@ -36,7 +36,7 @@ subscriptions model =
 
 main : Program Never Model Msg
 main =
-    Navigation.program Msgs.OnLocationChange
+    Navigation.program Messages.OnLocationChange
         { init = init
         , view = view
         , update = update
