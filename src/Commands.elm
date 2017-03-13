@@ -46,8 +46,8 @@ playerEncoder player =
         Encode.object attributes
 
 
-savePlayerCmd : Player -> Cmd Msg
-savePlayerCmd player =
+savePlayer : Player -> Cmd Msg
+savePlayer player =
     savePlayerRequest player
         |> Http.send Msgs.OnPlayerSave
 

@@ -1,7 +1,7 @@
 module Update exposing (..)
 
-import Commands exposing (savePlayerCmd)
-import Msgs exposing (Msg)
+import Commands
+import Msgs exposing (..)
 import Models exposing (Model, Player)
 import Routing
 import RemoteData
@@ -10,30 +10,30 @@ import RemoteData
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        Msgs.ChangeLocation path ->
+        ChangeLocation path ->
             ( model, Routing.changeLocation path )
 
-        Msgs.ChangeLevel player howMuch ->
+        ChangeLevel player howMuch ->
             let
                 updatedPlayer =
                     { player | level = player.level + howMuch }
             in
-                ( model, savePlayerCmd updatedPlayer )
+                ( model, Commands.savePlayer updatedPlayer )
 
-        Msgs.OnFetchPlayers response ->
+        OnFetchPlayers response ->
             ( { model | players = response }, Cmd.none )
 
-        Msgs.OnLocationChange location ->
+        OnLocationChange location ->
             let
                 newRoute =
                     Routing.parseLocation location
             in
                 ( { model | route = newRoute }, Cmd.none )
 
-        Msgs.OnPlayerSave (Ok player) ->
+        OnPlayerSave (Ok player) ->
             ( updatePlayer model player, Cmd.none )
 
-        Msgs.OnPlayerSave (Err error) ->
+        OnPlayerSave (Err error) ->
             ( model, Cmd.none )
 
 
