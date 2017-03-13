@@ -45,6 +45,22 @@ module.exports = {
   },
 
   devServer: {
+    historyApiFallback: {
+      rewrites: [
+        {
+          from: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          to: function(context) {return context.parsedUrl.pathname;}
+        },
+        {
+          from: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          to: function(context) {return context.parsedUrl.pathname;}
+        },
+        {
+          from: /\.(css|scss)$/,
+          to: function(context) {return context.parsedUrl.pathname;}
+        }
+      ]
+    },
     inline: true,
     stats: { colors: true },
   }
